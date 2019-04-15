@@ -200,8 +200,8 @@ List of 300 VueJS Interview Questions
 |191| [What is the versioning behavior in preset plugins?](#what-is-the-versioning-behavior-in-preset-plugins)|
 |192| [How do you allow plugin prompts?](#how-do-you-allow-plugin-prompts)|
 |193| [What are remote presets?](#what-are-remote-presets)|
-|194| [](#)|
-|195| [](#)|
+|194| [Can I use local presets?](#can-i-use-local-presets)|
+|195| [What is the purpose of browserslist option?](#what-is-the-purpose-of-browserslist-option)|
 |196| [](#)|
 |197| [](#)|
 |198| [](#)|
@@ -3401,8 +3401,24 @@ List of 300 VueJS Interview Questions
      # use preset from GitHub repo
      vue create --preset username/repo my-project
      ```
-194. ### ?
-195. ### ?
+194. ### Can I use local presets?
+     Yes, Vue CLI will load local presets if the value for the --preset option is a relative or absolute file path, or ends with .json. i.e, You can work with local presets directly. These local presets avoids repeatedly pushing the preset to a remote repo to test.
+     ```javascript
+     // Directory contains preset.json file
+     vue create --preset ./my-preset my-project
+     (OR)
+     vue create --preset my-preset.json my-project
+     ```
+195. ### What is the purpose of browserslist option?
+     The browserslist option is available in package.json file in order to specify a range of browsers the project is supported. This value is going to be used by babel and autoprefixer to transpile javascript features and applying vendor prefixes.
+     For example, you can declare it as follows,
+     ```javascript
+     "browserslist": [
+         "last 1 version",
+         "> 1%",
+         "IE 10"
+       ]
+     ```
 196. ### ?
 197. ### ?
 198. ### ?
